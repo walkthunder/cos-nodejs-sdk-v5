@@ -1,20 +1,21 @@
 {
-  "name": "cos-nodejs-sdk-v5",
-  "version": "2.11.12",
-  "description": "cos nodejs sdk v5",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "name": "tencent-cos-sdk-nodejs-v5",
+  "version": "2.11.13",
+  "description": "bundled tencent cos nodejs sdk v5",
+  "main": "dist/bundle.min.js",
   "scripts": {
     "demo": "node demo/demo.js",
     "demo-sts": "node demo/demo-sts.js",
     "demo-sts-scope": "node demo/demo-sts-scope.js",
     "test": "mocha test/test.js",
     "nyc": "nyc --reporter=clover --reporter=cobertura mocha --reporter xunit --reporter-options output=mocha.xml test/test.js",
-    "csp": "mocha test/csp.js"
+    "csp": "mocha test/csp.js",
+    "bundle": "rm -rf dist && mkdir dist && rollup --config rollup.config.js",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tencentyun/cos-nodejs-sdk-v5.git"
+    "url": "git+https://github.com/walkthunder/cos-nodejs-sdk-v5.git"
   },
   "keywords": [
     "tencent",
@@ -23,7 +24,7 @@
     "cos",
     "cos-sdk"
   ],
-  "author": "carsonxu",
+  "author": "walkthunder",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tencentyun/cos-nodejs-sdk-v5/issues"
@@ -33,15 +34,21 @@
     "conf": "^9.0.0",
     "mime-types": "^2.1.24",
     "request": "^2.88.2",
+    "tencent-cos-sdk-nodejs-v5": "^2.11.13",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-json": "^5.0.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
     "@types/node": "^14.14.20",
     "batch": "^0.6.1",
     "crc64-ecma182.js": "^1.0.0",
     "mocha": "^4.0.1",
     "nyc": "^15.1.0",
-    "qcloud-cos-sts": "^3.0.0"
+    "qcloud-cos-sts": "^3.0.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "engines": {
     "node": ">= 6"

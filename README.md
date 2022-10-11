@@ -1,22 +1,25 @@
-# cos-nodejs-sdk-v5
+# tencent-cos-sdk-nodejs-v5
+
+
+> Fix 了原SDK在不同项目中引用时的依赖 resolve 问题
 
 腾讯云 COS Nodejs SDK（[XML API](https://cloud.tencent.com/document/product/436/7751)）
 
-[releases and changelog](https://github.com/tencentyun/cos-nodejs-sdk-v5/releases)
+[releases and changelog](https://github.com/tencentyun/tencent-cos-sdk-nodejs-v5/releases)
 
 ## install
 
- [npm 地址](https://www.npmjs.com/package/cos-nodejs-sdk-v5)
+ [npm 地址](https://www.npmjs.com/package/tencent-cos-sdk-nodejs-v5)
  
 ```
-npm i cos-nodejs-sdk-v5 --save
+npm i tencent-cos-sdk-nodejs-v5 --save
 ```
 
 ## demo
 
 ```javascript
 // 引入模块
-var COS = require('cos-nodejs-sdk-v5');
+var COS = require('tencent-cos-sdk-nodejs-v5');
 // 创建实例
 var cos = new COS({
     SecretId: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
